@@ -64,6 +64,10 @@ KULTUREN_ALIASES = {
 # ─── HILFSFUNKTIONEN ──────────────────────────────────────────────────────────
 
 def lade_token():
+    import os
+    env_token = os.environ.get("TELEGRAM_TOKEN", "")
+    if env_token:
+        return env_token
     if TOKEN_FILE.exists():
         return TOKEN_FILE.read_text(encoding="utf-8").strip()
     return ""
