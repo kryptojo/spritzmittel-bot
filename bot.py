@@ -315,18 +315,9 @@ def main():
     token = lade_token()
 
     if not token:
-        print("\n" + "="*50)
-        print("  SPRITZMITTEL BOT - ERSTE EINRICHTUNG")
-        print("="*50)
-        print("\nDu brauchst einen Telegram Bot Token.")
-        print("Anleitung:")
-        print("1. Oeffne Telegram, suche: @BotFather")
-        print("2. Schreibe: /newbot")
-        print("3. Befolge die Schritte, du bekommst einen Token")
-        print("   Sieht so aus: 1234567890:ABCdefGHIjklMNO\n")
-        token = input("Token einfuegen und Enter druecken: ").strip()
-        TOKEN_FILE.write_text(token, encoding="utf-8")
-        print("Token gespeichert!\n")
+        print("FEHLER: Kein Telegram Token gefunden!")
+        print("Bitte TELEGRAM_TOKEN als Environment Variable in Railway setzen.")
+        exit(1)
 
     print("\n" + "="*50)
     print("  🌿 SPRITZMITTELERFASSUNG BOT LÄUFT")
